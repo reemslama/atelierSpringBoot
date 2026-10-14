@@ -5,6 +5,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -18,6 +21,7 @@ public class Equipement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long idEquipement;
     String libelle ;
-   ;
+   @ManyToMany(mappedBy = "equipements")
+   Set<Vehicule> vehicules;
 
 }

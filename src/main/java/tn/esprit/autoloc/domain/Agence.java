@@ -3,7 +3,7 @@ package tn.esprit.autoloc.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
+import java.util.List;
 @Entity
 @Getter
 @Setter
@@ -22,4 +22,6 @@ public class Agence {
     String ville;
     String adresse;
     String telephone;
+    @OneToMany
+    List<Vehicule> vehicules;
 }

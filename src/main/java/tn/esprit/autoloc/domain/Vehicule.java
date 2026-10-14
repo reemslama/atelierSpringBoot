@@ -5,7 +5,10 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
-@Entity
+import java.util.List;
+import java.util.Set;
+
+@Entity //jeya mn JPA
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,7 +17,7 @@ import java.math.BigDecimal;
 @ToString
 @FieldDefaults(level= AccessLevel.PRIVATE)
 public class Vehicule {
-    @Id
+    @Id //JPA
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long idVehicule;
     String immatricule;
@@ -25,5 +28,8 @@ public class Vehicule {
     BigDecimal tarifJournalier;
     @Enumerated(value = EnumType.STRING)
     StatutVehicule statut;
-
+   @ManyToOne
+    Agence agence;
+   @ManyToMany
+    Set<Equipement> equipements;
 }

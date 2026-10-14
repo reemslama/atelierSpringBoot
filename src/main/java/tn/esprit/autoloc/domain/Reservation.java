@@ -23,6 +23,9 @@ public class Reservation {
     LocalDate dateFin ;
     @Enumerated(value = EnumType.STRING)
     StatutReservation statut ;
-
+    @OneToOne
+    Contrat contrat;
+    @ManyToOne
+    Client client;
 
 }
