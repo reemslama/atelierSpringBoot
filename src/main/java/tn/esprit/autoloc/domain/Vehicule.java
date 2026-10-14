@@ -32,4 +32,6 @@ public class Vehicule {
     Agence agence;
    @ManyToMany
     Set<Equipement> equipements;
+    @OneToMany(mappedBy = "vehicule")
+    Set<Reservation> reservations;
 }

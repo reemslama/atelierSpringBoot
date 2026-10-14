@@ -27,5 +27,7 @@ public class Reservation {
     Contrat contrat;
     @ManyToOne
     Client client;
+    @ManyToOne
+    Vehicule vehicule;
 
 }

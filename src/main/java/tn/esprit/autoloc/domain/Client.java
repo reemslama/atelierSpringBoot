@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -25,5 +26,6 @@ public class Client {
     String telephone ;
     String numPermis ;
     LocalDate dateInscription;
-
+    @OneToMany(mappedBy = "client")
+    Set<Reservation> reservation;
 }
