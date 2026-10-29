@@ -18,7 +18,7 @@ import java.util.Locale;
 public class Maintenance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idMaintenance ;
+    Long idMaintenance ;
     Locale dateDebut ;
     LocalDate dateFin ;
     String description ;

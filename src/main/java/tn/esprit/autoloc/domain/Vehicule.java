@@ -1,5 +1,6 @@
 package tn.esprit.autoloc.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -19,7 +20,7 @@ import java.util.Set;
 public class Vehicule {
     @Id //JPA
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idVehicule;
+    Long idVehicule;
     String immatricule;
     String marque;
     String modele;
@@ -28,6 +29,7 @@ public class Vehicule {
     BigDecimal tarifJournalier;
     @Enumerated(value = EnumType.STRING)
     StatutVehicule statut;
+    @JsonBackReference // class parent
    @ManyToOne
     Agence agence;
    @ManyToMany

@@ -19,7 +19,7 @@ import java.util.Set;
 public class Equipement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idEquipement;
+    Long idEquipement;
     String libelle ;
    @ManyToMany(mappedBy = "equipements")
    Set<Vehicule> vehicules;
